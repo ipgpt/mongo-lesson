@@ -72,3 +72,11 @@ db.users.update({"_id":ObjectId("5adf3c1544abaca147cdd34b")},{$set:{"features":"
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
 ```
 ## Удалить всех любителей клубники
+*input*
+```
+db.users.remove({favoriteFruit:"strawberry"})
+```
+*output*
+```
+WriteResult({ "nRemoved" : 253 })
+```
