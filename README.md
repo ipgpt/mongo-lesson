@@ -80,3 +80,15 @@ db.users.remove({favoriteFruit:"strawberry"})
 ```
 WriteResult({ "nRemoved" : 253 })
 ```
+### Finish
+**restore backup**
+*input*
+```
+mongorestore
+```
+*output*
+```
+2018-05-15T00:46:11.603+0300    restoring indexes for collection users.users from metadata
+2018-05-15T00:46:11.681+0300    finished restoring users.users (844 documents)
+2018-05-15T00:46:11.682+0300    done
+```
