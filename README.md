@@ -80,8 +80,7 @@ db.users.remove({favoriteFruit:"strawberry"})
 ```
 WriteResult({ "nRemoved" : 253 })
 ```
-### Finish
-**restore backup**
+### Finish (restore backup)
 *input*
 ```
 mongorestore
