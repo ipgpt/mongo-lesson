@@ -47,3 +47,15 @@ db.users.findOne({$and:[{"index":{$gt:Math.ceil(30.38862559241706+31.5)}},{"frie
 ```
 
 ## Найти людей из того же штата, что и предыдущий человек и посмотреть какой фрукт любят больше всего в этом штате (аггрегация)
+*input*
+```
+db.users.aggregate({$match:{"address":{$regex:"Utah"}}},{$group:{_id:"$favoriteFruit",amount:{$sum:1}}})
+```
+*output*
+```
+{ "_id" : "strawberry", "amount" : 3 }
+{ "_id" : "apple", "amount" : 6 }
+{ "_id" : "banana", "amount" : 6 }
+```
+
+## Найти саммого раннего зарегистрировавшегося пользователя с таким любимым фруктом
