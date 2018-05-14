@@ -34,4 +34,16 @@ db.users.aggregate([{$match:{address:{$regex:".*Alaska.*"}}},{$group:{_id:null,a
 ```
 
 ## Начиная от Math.ceil(avg + avg_alaska) найти первого человека с другом по имени Деннис
+*input*
+```
+db.users.findOne({$and:[{"index":{$gt:Math.ceil(30.38862559241706+31.5)}},{"friends.name":/Dennis/}]},{_id:0,name:"$name",address:"$address"})
+```
+*output*
+```
+{
+       "name" : "Esperanza Blevins",
+       "address" : "659 Oceanic Avenue, Collins, Utah, 6277"
+}
+```
 
+## Найти людей из того же штата, что и предыдущий человек и посмотреть какой фрукт любят больше всего в этом штате (аггрегация)
